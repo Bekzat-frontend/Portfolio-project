@@ -19,12 +19,24 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  z-index: 10;
 }
+.header-bg {
+  background-color: rgba(0, 0, 0, 0.85) ;
+  transition: 0.5s;
 
+}
 .hamburger {
-  font-size: 2rem;
+  font-size: 1.5rem;
+
   cursor: pointer;
+
   display: none;
+
+  color: white;
 }
 
 @media screen and (max-width: 1040px) {
@@ -38,7 +50,7 @@
     position: absolute;
     top: 0;
     left: -100%;
-    z-index: 3;
+    z-index: -3;
     transition: 0.3s;
   }
 
