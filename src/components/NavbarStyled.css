@@ -12,6 +12,7 @@
   font-weight: 700;
   text-decoration: none;
   color: black;
+  color: rgba(235, 235, 235, 0.961);
 }
 
 .header {
@@ -25,9 +26,8 @@
   z-index: 10;
 }
 .header-bg {
-  background-color: rgba(0, 0, 0, 0.85) ;
+  background-color: rgba(0, 0, 0, 0.85);
   transition: 0.5s;
-
 }
 .hamburger {
   font-size: 1.5rem;
