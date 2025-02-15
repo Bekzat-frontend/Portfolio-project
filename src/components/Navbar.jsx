@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NavbarStyled.css";
 import { Link } from "react-router-dom";
+
 function Navbar() {
   const [click, setClick] = useState(false);
   const [color, setColor] = useState(false);
+
   const handleClick = () => {
     setClick(!click);
   };
+
   const changeColor = () => {
     if (window.scrollY > 100) {
       setColor(true);
@@ -14,34 +17,44 @@ function Navbar() {
       setColor(false);
     }
   };
-  window.addEventListener("scroll", changeColor);
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, []);
+
   return (
     <div className={color ? "header header-bg" : "header"}>
-      <Link to="/">
+      <Link to="/" className="logo">
         <h1>Portfolio</h1>
       </Link>
+
       <div className="hamburger" onClick={handleClick}>
         ☰
       </div>
-      <ul className={click ? "nav-menu.active" : "nav-menu"}>
+
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
-          <Link to="/" onClick={handleClick}>
+          <Link to="/" onClick={() => setClick(false)}>
             Home
           </Link>
         </li>
         <li>
-          <Link to="/project" onClick={handleClick}>
+          <Link to="/project" onClick={() => setClick(false)}>
             Project
           </Link>
         </li>
         <li>
-          <Link to="/about" onClick={handleClick}>
+          <Link to="/about" onClick={() => setClick(false)}>
             About
           </Link>
         </li>
         <li>
-          <Link to="/ contact" onClick={handleClick}>
-            Contact{" "}
+          <Link to="/contact" onClick={() => setClick(false)}>
+            Contact
           </Link>
         </li>
       </ul>
