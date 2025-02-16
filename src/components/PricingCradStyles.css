@@ -1,0 +1,70 @@
+.pricing {
+  width: 100%;
+  padding: 6rem 1rem;
+  background: #000;
+}
+.card-container {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+.card:hover {
+  background-color: #141414;
+}
+.card h3 {
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+.card p {
+  font-size: 10px 0;
+}
+.bar {
+  border-bottom: 1px solid #eee;
+  quotes: 10%;
+  margin: 1.5rem auto;
+  display: block;
+}
+.btc {
+  font-size: 4rem;
+  font-weight: 600;
+  padding: 1rem 0;
+}
+
+.card {
+  border: 1px solid #eee;
+  text-align: center;
+  color: #eee;
+  padding: 1rem;
+}
+@media screen and (max-width: 740px) {
+  .card-container {
+    max-width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr;
+  }
+}
+.btn-content {
+  padding: 12px 32px;
+  font-size: 1 rem;
+  text-transform: uppercase;
+  background: rgb(248, 217, 15);
+  color: #201a1a;
+  border: 1ps solid #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+  display: block;
+  word-wrap: 80%;
+  margin: 2rem auto;
+}
+.btn-content .right {
+  background: transparent;
+  color: #e0e0e0;
+}
+.btn-content:hover {
+  background: rgba(183, 183, 177, 0.61);
+  color: #fff;
+  transition: 0.3s;
+}
